@@ -1,4 +1,4 @@
-package com.inventory.backend.entity;
+package com.inventory.backend.auth.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

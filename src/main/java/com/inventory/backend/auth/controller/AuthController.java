@@ -1,7 +1,7 @@
-package com.inventory.backend.controller;
+package com.inventory.backend.auth.controller;
 
-import com.inventory.backend.dto.UserRequest;
-import com.inventory.backend.service.UserService;
+import com.inventory.backend.auth.dto.SignupRequest;
+import com.inventory.backend.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     @Autowired
-    private UserService service;
+    private AuthService service;
 
     @PostMapping("/signup")
-    public String signup(@RequestBody UserRequest request) {
+    public String signup(@RequestBody SignupRequest request) {
         return service.registerUser(request);
     }
 }

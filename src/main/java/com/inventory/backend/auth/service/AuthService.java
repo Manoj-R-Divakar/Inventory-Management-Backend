@@ -1,16 +1,16 @@
-package com.inventory.backend.service;
-import com.inventory.backend.dto.UserRequest;
-import com.inventory.backend.entity.User;
-import com.inventory.backend.repository.UserRepository;
+package com.inventory.backend.auth.service;
+import com.inventory.backend.auth.dto.SignupRequest;
+import com.inventory.backend.auth.entity.User;
+import com.inventory.backend.auth.repository.AuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class AuthService {
     @Autowired
-    private UserRepository repo;
+    private AuthRepository repo;
 
-    public String registerUser(UserRequest request) {
+    public String registerUser(SignupRequest request) {
 
         // Check duplicate email
         if (repo.existsByEmail(request.getEmail())) {
